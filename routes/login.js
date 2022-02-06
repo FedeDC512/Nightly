@@ -18,16 +18,10 @@ router.post('/', async (req, res) => {
   let psw = req.body.password
   if (nick && psw) {
     if (nick == "sabrim" && psw == "sabrify") res.redirect("https://zalweny26.github.io")
-    if (nick == "alwe" && psw == "dany") res.redirect("https://zalweny26.github.io")
-    if (nick == "gioza" && psw == "zang") res.redirect("https://zalweny26.github.io")
-    if (nick == "fededc" && psw == "fededc") res.redirect("https://zalweny26.github.io")
-    /*psw = crypto.createHash("sha256").update(psw).digest("hex")
-    await doQuery('SELECT * FROM Utente WHERE Nickname = ? AND Password = ?', [nick, psw]).then(rs => {
-      req.session.logged = true
-      req.session.id = rs.UtenteID
-      req.session.user = rs.Nickname
-      res.redirect('/home')
-    }).catch(() => res.send('Password sbagliata !'))*/
+    else if (nick == "alwe" && psw == "dany") res.redirect("https://zalweny26.github.io")
+    else if (nick == "gioza" && psw == "zang") res.redirect("https://zalweny26.github.io")
+    else if (nick == "fededc" && psw == "fededc") res.redirect("https://zalweny26.github.io")
+    else res.redirect('/login')
 	} else res.send('Nome utente o password errati !')
   res.end()
 })
