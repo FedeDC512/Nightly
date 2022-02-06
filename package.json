@@ -1,0 +1,35 @@
+{
+  "name": "Nightly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WebApp per il progetto di Basi di dati",
+  "author": "zAlweNy26",
+  "license": "ISC",
+  "scripts": {
+    "start": "SET DEBUG=Nightly:* & node ./bin/main.js",
+    "dev": "SET DEBUG=Nightly:* & nodemon ./bin/main.js -e js,ejs,css",
+    "sc": "sass --no-source-map ./public/scss",
+    "watch": "sass --no-source-map -w ./public/scss",
+    "pop": "node populate.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "debug": "~4.3.3",
+    "dotenv": "^14.3.2",
+    "ejs": "~3.1.6",
+    "express": "~4.17.2",
+    "express-session": "^1.17.2",
+    "http-errors": "~2.0.0",
+    "morgan": "~1.10.0",
+    "musicbrainz-api": "^0.7.2",
+    "mysql": "^2.18.1",
+    "sass": "^1.49.0"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.6.7",
+    "nodemon": "^2.0.15",
+    "spotify-web-api-node": "^5.0.2"
+  }
+}

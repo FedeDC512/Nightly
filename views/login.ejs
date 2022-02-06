@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./head'); %>
+    <link rel="stylesheet" type="text/css" href="scss/login.css">
+  </head>
+  <body>
+    <div class="container <%= theme %>">
+      <a id="theme" class="icon-btn"><i class="fas fa-palette fa-lg"></i></a>
+      <div class="content-wrap">
+        <img id="logo" src="icons/logo.svg" alt="Logo">
+        <div id="wave"></div>
+        <div id="logbox">
+          <div class="title">Accedi a Nightly</div>
+          <div class="form-container">
+            <form class="login" method="post" action="/login">
+              <div class="field">
+                <input type="text" name="nickname" pattern="[a-zA-Z0-9]+" minlength="4" maxlength="20" placeholder="Nome utente..." required>
+              </div>
+              <div class="field">
+                <input type="password" name="password" minlength="4" maxlength="20" placeholder="Password..." required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Accedi">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <%- include('./footer'); %>
+    </div>
+    <script src="javascripts/login.js"></script>
+  </body>
+</html>

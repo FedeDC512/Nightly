@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./head'); %>
+    <link rel="stylesheet" type="text/css" href="scss/error.css">
+  </head>
+  <body>
+    <div class="container <%= theme %>">
+        <div class="content-wrap">
+            <p>Errore :</p>
+            <h1><%= error %></h1>
+            <% if (error == 404) { %>
+                <p>La pagina che stai<br>cercando non esiste !</p>
+            <% } else { %>  
+                <p>Si è presentato un<br>errore interno al sito !</p>
+            <% } %>
+        </div>
+        <a id="home" href="/" class="icon-btn"><i class="fas fa-home fa-lg"></i></a>
+    </div>
+    <%- include('./footer'); %>
+    <script src="javascripts/error.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('./head'); %>
+        <link rel="stylesheet" type="text/css" href="scss/home.css">
+    </head>
+    <body>
+        <div class="container <%= theme %>">
+            <header>
+                <div class="flex">
+                    <a id="theme" class="icon-btn"><i class="fas fa-palette fa-lg"></i></a>
+                    <nav>
+                        <ul class="navs">
+                            <li><a href="/home/library">Libreria</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="flex">
+                    <div class="searchbox">
+                        <input type="text" name="search" placeholder="Cerca...">
+                    </div>
+                    <img id="logo" src="icons/logo.svg" alt="Logo">
+                    <a href="/home/logout" class="icon-btn"><i class="fas fa-sign-out-alt fa-lg"></i></i></a>
+                </div>
+            </header>
+            <div class="content-wrap">
+            </div>
+            <%- include('./footer'); %>
+        </div>
+        <script src="javascripts/home.js"></script>
+    </body>
+</html>
