@@ -1,0 +1,116 @@
+@import 'variables.scss';
+
+.content-wrap {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#logo {
+    width: 348px;
+    height: 348px;
+    border: 5px solid var(--base);
+    border-radius: 50%;
+    transition: 500ms;
+}
+
+#wave {
+    height: 348px;
+    width: 4px;
+    background: var(--base);
+    border-radius: 50px;
+    transition: 500ms;
+}
+
+#logbox {
+    background-color: var(--base);
+    overflow: hidden;
+    width: 348px;
+    transition: 500ms;
+    padding: 30px;
+    border-radius: $radius;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+
+    .title {
+        font-size: $biggest;
+        font-weight: 600;
+        text-align: center;
+        color: var(--contrast);
+    }    
+}
+
+#theme {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.field {
+    height: 50px;
+    margin-top: 20px;
+
+    input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        color: var(--contrast);
+        padding-left: 15px;
+        border-radius: $radius;
+        background-color: var(--base);
+        border: 1px solid $grey;
+        border-bottom-width: 3px;
+        font-size: $normal;
+        transition: all 0.3s ease;
+
+        &:focus {
+            border-color: var(--contrast);
+
+            &::placeholder { 
+                color: var(--contrast);
+                transition: all 0.3s ease;
+            }
+        }
+
+        &::placeholder {
+            color: var(--low-contrast);
+            transition: all 0.3s ease;
+        }
+
+        &:not(:placeholder-shown) { border-color: hsl(0, 75%, 50%); }
+        
+        &:valid { border-color: hsl(120, 75%, 50%); }
+    }
+}
+
+.btn {
+    height: 50px;
+    border-radius: $radius;
+    position: relative;
+    overflow: hidden;
+
+    .btn-layer {
+        height: 100%;
+        width: 300%;
+        position: absolute;
+        left: -100%;
+        background: -webkit-linear-gradient(right, $primary, $secondary, $primary, $secondary);
+        border-radius: $radius;
+        transition: all 0.4s ease;;
+    }
+
+    &:hover .btn-layer { left: 0; }
+
+    input {
+        z-index: 1;
+        position: relative;
+        background: none;
+        border: none;
+        color: var(--base);
+        padding-left: 0;
+        border-radius: $radius;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,51 @@
+@import 'variables.scss';
+
+.content-wrap {
+    transition: 500ms;
+    background-color: var(--base);
+    margin: 20px 20px 110px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+#logo {
+    width: 30px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    width: 100%;
+    padding: 10px;
+    transition: 500ms;
+    background-color: var(--base);
+
+    .flex {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fas {
+        color: var(--contrast) !important;
+        vertical-align: middle;
+    }
+
+    a {
+        color: var(--contrast);
+        outline: none;
+        text-decoration: none;
+    }
+
+    .navs {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            padding: 0 30px;
+        }
+    }
+}

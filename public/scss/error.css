@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+.lightTheme {
+  --base: #FFFFFF;
+  --low-contrast: #626262;
+  --contrast: #262626;
+}
+
+.darkTheme {
+  --base: #262626;
+  --low-contrast: #565656;
+  --contrast: #FFFFFF;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    -webkit-transform: rotate(180deg) scale(0.1) translate(50%, -50%);
+            transform: rotate(180deg) scale(0.1) translate(50%, -50%);
+    top: 0;
+    left: 0;
+  }
+  to {
+    -webkit-transform: rotate(-15deg) scale(1) translate(-50%, -50%);
+            transform: rotate(-15deg) scale(1) translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    -webkit-transform: rotate(180deg) scale(0.1) translate(50%, -50%);
+            transform: rotate(180deg) scale(0.1) translate(50%, -50%);
+    top: 0;
+    left: 0;
+  }
+  to {
+    -webkit-transform: rotate(-15deg) scale(1) translate(-50%, -50%);
+            transform: rotate(-15deg) scale(1) translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+  }
+}
+
+.content-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: transparent;
+}
+
+.content-wrap h1 {
+  position: absolute;
+  -webkit-animation: zoomIn 1s forwards;
+          animation: zoomIn 1s forwards;
+  font-size: 25vmax;
+  color: var(--base);
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.content-wrap p {
+  position: absolute;
+  color: var(--base);
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold;
+}
+
+.content-wrap p:first-child {
+  top: 10px;
+  left: 20px;
+  text-align: left;
+}
+
+.content-wrap p:last-child {
+  bottom: 10px;
+  right: 20px;
+  text-align: right;
+}
+
+#home {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/*# sourceMappingURL=error.css.map */

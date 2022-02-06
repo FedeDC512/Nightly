@@ -1,0 +1,47 @@
+$primary: #9dd8f7;
+$secondary: #8679b7;
+$dark: #262626;
+$grey: #626262;
+
+$biggest: 2em;
+$bigger: 1.5em;
+$big: 1.25em;
+$normal: 1.05em;
+$small: 0.9em;
+$smaller: 0.75em;
+$smallest: 0.625em;
+
+$radius: 10px;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.lightTheme {
+    --base: #FFFFFF;
+    --low-contrast: #626262;
+    --contrast: #262626;
+}
+
+.darkTheme {
+    --base: #262626;
+    --low-contrast: #565656;
+    --contrast: #FFFFFF;
+}
+
+@mixin scrollbars($size, $fgc, $bgc) {
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background: $fgc;
+        border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-track { background: $bgc; }
+
+    & {
+        scrollbar-face-color: $fgc;
+        scrollbar-track-color: $bgc;
+    }
+}

@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+.lightTheme {
+  --base: #FFFFFF;
+  --low-contrast: #626262;
+  --contrast: #262626;
+}
+
+.darkTheme {
+  --base: #262626;
+  --low-contrast: #565656;
+  --contrast: #FFFFFF;
+}
+/*# sourceMappingURL=variables.css.map */
