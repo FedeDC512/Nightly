@@ -103,11 +103,11 @@ JOIN AscoltiTotali ast ON gb.Brano = ast.Brano
 WHERE ast.Utente = {$nomeUtente} ORDER BY Ascolti;
 
 -- Creare una playlist intelligente che contenga i brani con più ascolti dei generi ascoltati dall'utente
-CREATE VIEW generiAscoltati AS SELECT GenereID, Brano, Utente FROM GeneriBrano gb
+CREATE VIEW generiAscoltati(GenereID, Brano, Utente) AS SELECT GenereID, Brano, Utente FROM GeneriBrano gb
 JOIN AscoltiTotali ast ON gb.Brano = ast.Brano ORDER BY Ascolti;
 
 SELECT Brano FROM Generi g JOIN generiAscoltati ga ON g.GenereID = ga.GenereID
-JOIN PiaceBrano pb ON ga.Brano = pb.Brano WHERE ga.Utente = {$nomeUtente} LIMIT 15;
+JOIN PiaceBrano pb ON ga.Brano = pb.Brano WHERE ga.Utente = {$nomeUtente} LIMIT 20;
 
 INSERT INTO Playlist(Titolo, Manuale) VALUES ("Playlist intelligente", false);
 INSERT INTO PlaylistInLibreria(Libreria, Playlist) VALUES({$idLibreriaUtente}, {$idPlaylist});
@@ -120,9 +120,10 @@ INSERT INTO BraniPlaylist(Brano, Playlist) VALUES({$idBrano5}, {$idPlaylist});
 -- e così via...
 
 -- Creazione di una playlist giornaliera, settimanale, mensile e annuale per ogni utente
-CREATE VIEW braniPiaciuti AS SELECT Brano, COUNT(*) AS numeroLike FROM PiaceBrano GROUP BY Brano;
+CREATE VIEW braniPiaciuti(Brano, Utente, numeroLike) AS 
+SELECT Brano, Utente, COUNT(*) FROM PiaceBrano GROUP BY Brano;
 
-SELECT Brano FROM braniPiaciuti ORDER BY numeroLike LIMIT 15;
+SELECT Brano FROM braniPiaciuti WHERE Utente = {$nomeUtente} ORDER BY numeroLike LIMIT 20;
 
 -- Per ogni utente :
 INSERT INTO Playlist(Titolo, Manuale) VALUES ("Playlist automatica", false);
@@ -134,3 +135,7 @@ INSERT INTO BraniPlaylist(Brano, Playlist) VALUES({$idBrano3}, {$idPlaylist});
 INSERT INTO BraniPlaylist(Brano, Playlist) VALUES({$idBrano4}, {$idPlaylist});
 INSERT INTO BraniPlaylist(Brano, Playlist) VALUES({$idBrano5}, {$idPlaylist});
 -- e così via...
+
+CREATE EVENT PlaylistSpeciali ON SCHEDULE EVERY 1 DAY DO BEGIN
+    -- ...
+END

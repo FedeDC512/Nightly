@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     else if (nick == "alwe" && psw == "dany") res.redirect("https://zalweny26.github.io")
     else if (nick == "gioza" && psw == "zang") res.redirect("https://zalweny26.github.io")
     else if (nick == "fededc" && psw == "fededc") res.redirect("https://zalweny26.github.io")
-    else res.redirect('/login')
+    else res.redirect('/')
 	} else res.send('Nome utente o password errati !')
   res.end()
 })
